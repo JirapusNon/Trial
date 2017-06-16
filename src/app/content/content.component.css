@@ -8,7 +8,7 @@ table, th, td {
    border: 1px solid black;
 }
 th {
-    background-color: #4CAF50;
+    background-color: #3f51b5;
     color: white;
     text-align: center !important;
 }
@@ -28,6 +28,35 @@ tr:nth-child(even){
     padding-top: 20px;
 }
 
+.material-icons{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-dialog{
+    margin: 18% auto;
+    width: 300px;
+}
+.modal-body{
+    padding:8px;
+    border: 1px solid #f0ad4e;
+}
+
+.modal-header{
+    padding:8px;
+    border: 1px solid #f0ad4e;
+    background-color: #f0ad4e
+}
+.modal-title{
+        font-size: 15px;
+        font-weight: bold;
+        color: white; 
+}
+
+
+:host/deep/.mat-input-subscript-wrapper{
+  color: red;
+}
 
 
  

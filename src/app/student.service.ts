@@ -18,12 +18,15 @@ export class StudentService {
     return this.http.get("http://localhost:57454/User/Search/" + text).map(this.extractData)
   }
 
-  InsertData(firstname, lastname) {
+  InsertData(DetailUser) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    let body = JSON.stringify({ Firstname: firstname, Lastname: lastname });
+    let body = JSON.stringify(DetailUser);
     return this.http.post("http://localhost:57454/User/Insert/", body, options)
   }
 
+  DeleteData(id) {
+    return this.http.delete("http://localhost:57454/User/Delete/" + id)
+  }
 
 }

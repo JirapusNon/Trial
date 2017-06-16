@@ -12,12 +12,13 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:center">
         <md-input-container style="margin-right:10px" color="warn" hintLabel="*requied">
-          <input mdInput placeholder="First Name" [(ngModel)]="Firstname">
+          <input mdInput placeholder="First Name" [(ngModel)]="DetailUser.Firstname">
         </md-input-container>
         <md-input-container color="warn" hintLabel="*requied">
-          <input mdInput placeholder="Last Name" [(ngModel)]="Lastname">
+          <input mdInput placeholder="Last Name" [(ngModel)]="DetailUser.Lastname">
         </md-input-container>
         <button md-mini-fab color="primary" class="btnSearch" (click)="onInsertClick()">OK</button>
+        <button #btnUpdate md-mini-fab color="primary" class="btnSearch" disabled="true">Update</button>
       </div>
     </div>
   </div>
@@ -26,11 +27,43 @@
       <th>ID</th>
       <th>First Name</th>
       <th>Last Name</th>
-      <tr *ngFor="let data of Data ">
+      <th></th>
+      <tr *ngFor="let data of Data " (click)="onRowClick(data,btnUpdate)">
         <td>{{data.id}}</td>
         <td>{{data.Firstname}}</td>
         <td>{{data.Lastname}}</td>
+        <td>
+          <md-icon color="warn" (click)="DetailUser.ID = data.id" title="Delete this data." data-toggle="modal" data-target="#myModal">delete</md-icon>
+        </td>
       </tr>
     </table>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Delete this data?</h4>
+        </div>
+        <div class="modal-body" style="text-align:right">
+          <button type="button" class="btn btn-success btn-sm" (click)="onDeleteClick()" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="DangerDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #d9534f;border:none;">
+          <h4 class="modal-title" id="DangerDialogMsg"></h4>
+        </div>
+        <div class="modal-body" style="text-align:right;border:none">
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
