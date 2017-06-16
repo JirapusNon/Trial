@@ -1,25 +1,2 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h4>
-    Welcome to My App!!
-  </h4>
-  <!--<input type="Text" (keyup)="onKey($event)">
-  <button>Search</button>-->
-  <br>
-  <input type="Text" #txtSearch (keyup)="onKey($event)">
-  <!--<button md-button>Click me!</button>-->
-  <button (click)="onClick(txtSearch)" class="btn-sm btn-danger">Search</button><br><br>
-
-  <div>
-    <table>
-      <th>ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <tr *ngFor="let data of Data">
-        <td>{{data.id}}</td>
-        <td>{{data.Firstname}}</td>
-        <td>{{data.Lastname}}</td>
-      </tr>
-    </table>
-  </div>
-</div>
+<router-outlet></router-outlet>
+<app-header></app-header>

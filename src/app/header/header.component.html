@@ -1,0 +1,43 @@
+<md-toolbar color="primary" class="menu-bar">
+  <!--<md-sidenav-container class="sidenav-container">-->
+  <button md-button onclick=onClickMenu()>
+      <md-icon>format_list_bulleted</md-icon>
+    </button>
+  <!--</md-sidenav-container>-->
+  <span>Management</span>
+</md-toolbar>
+
+<div class="example-sidenav" id="sidenav">
+  <div class="btnMenu container-fluid" routerLink='' onclick=OnSubMenuClick()>
+    <div class="row">
+      <div class="col-xs-3" style="text-align:right;padding-top:20px;">
+        <md-icon>home</md-icon>
+      </div>
+      <div class="col-xs-3" style="padding-top:25px;margin-left:-20px;">Home</div>
+      <div class="col-xs-3"></div>
+      <div class="col-xs-3"></div>
+    </div>
+  </div>
+  <div class="btnMenu container-fluid" routerLink='/Content' onload=OnSubMenuClick()>
+    <div class="row">
+      <div class="col-xs-3" style="text-align:right;padding-top:20px;">
+        <md-icon>star_rate</md-icon>
+      </div>
+      <div class="col-xs-3" style="padding-top:25px;margin-left:-20px;">Data</div>
+      <div class="col-xs-3"></div>
+      <div class="col-xs-3"></div>
+    </div>
+  </div>
+</div>
+
+<!--<md-sidenav class="example-sidenav" id="sidenav">
+  <div class="btnMenu" routerLink=''>
+    <md-icon>home</md-icon>
+    Home
+  </div>
+
+  <div class="btnMenu" routerLink='/Content'>
+    <md-icon>star_rate</md-icon>
+    <span>Data</span>
+  </div>
+</md-sidenav>-->

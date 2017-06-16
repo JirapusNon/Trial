@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MyApp</title>
   <base href="/">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
@@ -14,11 +15,41 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
     crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link href="../node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
+  <script>
+    function onClickMenu() {
+      var element = document.getElementById("page-content");
+      var sidenav = document.getElementById("sidenav");
+      var styleSidenav = window.getComputedStyle(sidenav);
+      var display = styleSidenav.getPropertyValue('display');
+      var style = window.getComputedStyle(element);
+      var marginLeft = style.getPropertyValue('margin-left');
+      var test = marginLeft.replace('px', '')
+      if (display == "none") {
+        sidenav.style.width = '20%'
+        sidenav.style.display = 'block'
+        element.style.marginLeft = '20%'
+        element.style.overflowY = 'hidden'
+      }
+      else {
+        sidenav.style.display = 'none'
+        element.style.marginLeft = '0%';
+      }
+    }
+    function OnSubMenuClick() {
+      var element = document.getElementById('page-content')
+      var sidenav = document.getElementById('sidenav')
+      var styleSidenav = window.getComputedStyle(sidenav)
+      var display = styleSidenav.getPropertyValue('display')
+      if (display == "block") {
+        element.style.marginLeft = '20%'
+        element.style.overflowY = 'hidden';
+      }
+    }
+  </script>
 </head>
+
 
 <body>
   <app-root></app-root>
