@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class StudentService {
-
+  Result;
   constructor(private http: Http) {
   }
 
@@ -23,6 +23,13 @@ export class StudentService {
     let options = new RequestOptions({ headers: headers });
     let body = JSON.stringify(DetailUser);
     return this.http.post("http://localhost:57454/User/Insert/", body, options)
+  }
+
+  UpdateData(DetailUser) {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    let body = JSON.stringify(DetailUser);
+    return this.http.put("http://localhost:57454/User/Update/", body, options)
   }
 
   DeleteData(id) {

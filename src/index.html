@@ -44,9 +44,26 @@
         element.style.overflowY = 'hidden';
       }
     }
+    function onRowUpdateClick() {
+      $('#btnUpdate').prop("disabled", false);
+      $('#btnCancel').prop("disabled", false);
+      $('#btnOk').prop("disabled", true);
+    }
+
+    function OnCancelClick() {
+      $('#btnUpdate').prop("disabled", true);
+      $('#btnCancel').prop("disabled", true);
+      $('#btnOk').prop("disabled", false);
+    }
+
     function DangerDialogOpen(text) {
       $('#DangerDialogMsg').text(text);
       $('#DangerDialog').modal('show')
+    }
+
+    function SuccessDialogOpen(text) {
+      $('#SuccessDialogMsg').text(text);
+      $('#SuccessDialog').modal('show')
     }
   </script>
 </head>
